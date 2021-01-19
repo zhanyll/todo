@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshop</title>
+</head>
+
+<body>
+    {% for books in books_list %}
+    <p>{{ books.title }},
+        {{ books.author }},
+        {{ books.date }}
+    </p>
+    {% endfor %}
+</body>
+
+</html>
