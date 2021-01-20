@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todo, Books
 
@@ -19,3 +19,10 @@ def second(request):
 def third(request):
     return HttpResponse("This is page test3")
 
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = Todo(text=text)
+    todo.save()
+    return redirect(test)
