@@ -26,3 +26,16 @@ def add_todo(request):
     todo = Todo(text=text)
     todo.save()
     return redirect(test)
+
+def add_book(request):
+    form = request.POST
+    title = form["book_title"]
+    subtitle = form["book_subtitle"]
+    author = form["book_author"]
+    price = form["book_price"]
+    genre = form["book_genre"]
+    description = form["book_description"]
+    year = form["book_year"]
+    b = Books(title=title, subtitle = subtitle, author=author, price=price, genre=genre, description=description, year=year)
+    b.save()
+    return redirect(books)

@@ -12,7 +12,7 @@ class Books(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-    price = models.CharField(max_length=10)
+    price = models.CharField(max_length=4)
     genre = models.CharField(max_length=50)
     author = models.CharField(max_length=150)
     year = models.CharField(max_length=4)
