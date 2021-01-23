@@ -28,8 +28,11 @@ urlpatterns = [
     path("books/", books),
     path("add-todo/", add_todo, name = "add-todo"),
     path("add-book", add_book, name = "add-book"),
-    path("delee-todo/<id>/", delete_todo, name="delete-todo"),
+    path("delete-todo/<id>/", delete_todo, name="delete-todo"),
     path("mark-todo/<id>/", mark_todo, name="mark-todo"),
-    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo")   
+    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
+    path("delete-book/<id>/", delete_book, name="delete-book"),
+    path("mark-book/<id>/", mark_book, name="mark-book"),
+    path("unmark-book/<id>/", unmark_book, name="unmark-book"),  
 ]   + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

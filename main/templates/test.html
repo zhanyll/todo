@@ -29,8 +29,7 @@
             <div class="todo_item
                 {% if todo.is_favorite %}
                     marked
-                {% endif %}
-            ">
+                {% endif %}">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox" />
@@ -42,7 +41,7 @@
                     <p>{{ todo.created_ad }}</p>
                     <div class="action_buttons">
                         {% if todo.is_favorite %}
-                        <a href="{% url 'mark-todo' todo.id %}">
+                        <a href="{% url 'unmark-todo' todo.id %}">
                             <img
                                 src="{% static './icones/w256h2561350817780stariconrt2.png' %}">
                         </a>

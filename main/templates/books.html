@@ -26,7 +26,11 @@
         </div>
         <div class="book_container">
             {% for b in books_list %}
-            <div class="book_item">
+            <div class="book_item
+            {% if b.is_favorites %}
+                marked
+            {% endif %}
+            ">
                 <h4>{{ b.title }}</h4>
                 <h6>{{ b.subtitle }}</h6>
                 <p>{{ b.author }}</p>
@@ -35,9 +39,24 @@
                 <p>{{ b.description }}</p>
                 <p>{{ b.price }}</p>
                 <p>{{ b.date }}</p>
+                <div class="book_item_footer">
+                    <div class="action_buttons">
+                        {% if b.is_favorites %}
+                        <a href="{% url 'unmark-book' b.id %}">
+                            <img src="{% static './icones/w256h2561350817780stariconrt2.png' %}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'mark-book' b.id %}">
+                            <img src="{% static './icones/w512h4961380477090star.png' %}">
+                        </a>
+                        {% endif %}
+                        <a href="{% url 'delete-book' b.id %}">
+                            <img src="{% static './icones/3823-200.png' %}">
+                        </a>
+                    </div>
+                </div>
             </div>
             {% endfor %}
-        </div>
     </section>
 </body>
 
