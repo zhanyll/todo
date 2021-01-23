@@ -39,3 +39,8 @@ def add_book(request):
     b = Books(title=title, subtitle = subtitle, author=author, price=price, genre=genre, description=description, year=year)
     b.save()
     return redirect(books)
+
+def delete_todo(request, id):
+    todo = Todo.objects.get(id=id)
+    todo.delete()
+    return redirect(test)
