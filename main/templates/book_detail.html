@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshop</title>
+</head>
+
+<body>
+    <h4>{{ book_object.title }}</h4>
+    <h5>{{ book_object.subtitle }}</h5>
+    <h6>{{ book_object.author }}</h6>
+    <p>{{ book_object.description }}</p>
+    <p>{{ book_object.year }}</p>
+    <p>{{ book_object.genre }}</p>
+    <p>{{ book_object.price }}</p>
+    <p>{{ book_object.date }}</p>
+</body>
+</html>
