@@ -79,3 +79,9 @@ def unmark_book(request, id):
 def BooksDetail(request, id):
     book_object = Books.objects.get(id=id)
     return render(request, "book_detail.html", {"book_object": book_object})
+
+def close_todo(request, id):
+    todo = Todo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test)
